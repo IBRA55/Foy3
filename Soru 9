@@ -1,0 +1,4 @@
+SELECT Calisan.ad, Calisan.soyad, Unvan.unvan_calisan
+FROM Calisan, Unvan
+WHERE Calisan.calisan_id = Unvan.unvan_calisan_id
+AND Unvan.unvan_calisan IN ('Yönetici', 'Müdür');
