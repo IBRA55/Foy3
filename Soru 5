@@ -1,0 +1,3 @@
+SELECT calisan_birim_id, COUNT(*) AS calisan_sayisi
+FROM Calisan
+GROUP BY calisan_birim_id;
