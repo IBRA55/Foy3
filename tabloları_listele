@@ -1,0 +1,4 @@
+SELECT * FROM Birim;
+SELECT * FROM Calisan;
+SELECT * FROM Unvan;
+SELECT * FROM Ikramiye;
