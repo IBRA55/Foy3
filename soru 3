@@ -1,0 +1,2 @@
+SELECT ad, soyad, maas FROM Calisan
+WHERE calisan_birim_id IN (1, 2);
