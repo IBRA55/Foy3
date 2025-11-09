@@ -1,0 +1,3 @@
+SELECT Calisan.ad, Calisan.soyad, Ikramiye.ikramiye_ucret
+FROM Calisan, Ikramiye
+WHERE Calisan.calisan_id = Ikramiye.ikramiye_calisan_id;
