@@ -1,0 +1,7 @@
+SELECT ad, soyad, maas, calisan_birim_id
+FROM Calisan
+WHERE maas IN (
+    SELECT MAX(maas)
+    FROM Calisan
+    GROUP BY calisan_birim_id
+);
