@@ -1,0 +1,4 @@
+SELECT unvan_calisan, COUNT(*) AS calisan_sayisi
+FROM Unvan
+GROUP BY unvan_calisan
+HAVING COUNT(*) > 1;
