@@ -1,0 +1,36 @@
+CREATE DATABASE Föy3;
+GO
+
+USE Föy3;
+GO
+
+CREATE TABLE Birim (
+    birim_id INT PRIMARY KEY,
+    birim_ad VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Calisan (
+    calisan_id INT PRIMARY KEY IDENTITY(1,1),
+    ad VARCHAR(50) NOT NULL,
+    soyad VARCHAR(50) NOT NULL,
+    maas DECIMAL(10,2) NOT NULL,
+    ise_baslama_tarih DATETIME NOT NULL,
+    calisan_birim_id INT NOT NULL,
+    FOREIGN KEY (calisan_birim_id) REFERENCES Birim(birim_id)
+);
+
+CREATE TABLE Unvan (
+    unvan_id INT PRIMARY KEY IDENTITY(1,1),
+    unvan_calisan_id INT NOT NULL,
+    unvan_calisan VARCHAR(50) NOT NULL,
+    unvan_tarih DATETIME NOT NULL,
+    FOREIGN KEY (unvan_calisan_id) REFERENCES Calisan(calisan_id)
+);
+
+CREATE TABLE Ikramiye (
+    ikramiye_id INT PRIMARY KEY IDENTITY(1,1),
+    ikramiye_calisan_id INT NOT NULL,
+    ikramiye_ucret DECIMAL(10,2) NOT NULL,
+    ikramiye_tarih DATETIME NOT NULL,
+    FOREIGN KEY (ikramiye_calisan_id) REFERENCES Calisan(calisan_id)
+);
